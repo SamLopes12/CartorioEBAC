@@ -152,65 +152,80 @@ int main()
 	
 	int menu=0;  //definindo variaveis
 	int x=1;
-							
+	char senha[10] = "a";
+	int comparacao;
+	
+	printf("\tCARTORIO DA EBAC\n\n");
+	printf("Login de Administrador!\n\nDigite a sua Senha: ");
+	scanf("%s", senha);	
+	
+	comparacao = strcmp(senha, "admin");
+	
+	if(comparacao == 0) //Aqui estamos colocando uma senha para ter acesso ao sistema.
+	{
+		system("cls");
+													
 								//Fim da Criacao de Variaveis
 							
 							
 								//Inicio da Funcao de Repeticao (laco de Repeticao)
 							
-	for(x=1;x=1;) //variavel criada para que o software sempre volte para o menu (loop infinito).
-	{
+		for(x=1;x=1;) //variavel criada para que o software sempre volte para o menu (loop infinito).
+		{
 		
-		system("cls"); //apagando informacoes da tela
+			system("cls"); //apagando informacoes da tela
 	
 	
-		setlocale(LC_ALL, "Portuguese"); //definindo o idioma
+			setlocale(LC_ALL, "Portuguese"); //definindo o idioma
 	
-		printf("\tCARTORIO DA EBAC\n\n"); //inicio do menu
-		printf("Escolha a opcao desejada do menu:\n\n");
-		printf("1 - Registrar Nomes\n");
-		printf("2 - Consultar Nomes\n");
-		printf("3 - Deletar Nomes\n");
-		printf("4 - Sair do sistema\n\n\n\n\n\n");
-		printf("Escolha a opcao desejada: ");  //fim do menu
+			printf("\tCARTORIO DA EBAC\n\n"); //inicio do menu
+			printf("Escolha a opcao desejada do menu:\n\n");
+			printf("1 - Registrar Nomes\n");
+			printf("2 - Consultar Nomes\n");
+			printf("3 - Deletar Nomes\n");
+			printf("4 - Sair do sistema\n\n\n\n\n\n");
+			printf("Escolha a opcao desejada: ");  //fim do menu
 	
-		scanf("%d", &menu); //armazenando a escolha do usuario
+			scanf("%d", &menu); //armazenando a escolha do usuario
 	
-		system("cls"); //apagando coisas desnecessarias da tela
-		
+			system("cls"); //apagando coisas desnecessarias da tela
+			
 		
 								//Inicio da Selecao do Menu
 		
-		switch(menu)
-		{
-			case 1:	//dizendo para o computador que caso seja essa opcao, realizar isso
+			switch(menu)
+			{
+				case 1:	//dizendo para o computador que caso seja essa opcao, realizar isso
 				registro();
 				break; //serve para finalizar a opcao no switch case
 			
-			case 2: //dizendo para o computador que caso seja essa opcao, realizar isso
+				case 2: //dizendo para o computador que caso seja essa opcao, realizar isso
 				consulta();
 				break;
 			
-			case 3: //dizendo para o computador que caso seja essa opcao, realizar isso
+				case 3: //dizendo para o computador que caso seja essa opcao, realizar isso
 				deletar();
 				break;
 				
-			case 4:
+				case 4:
 				printf("Obrigado por utilizar o Sistema!\n\n\n\n\n\n");
 				return 0;
 				break;
 				
-			default:
+				default:
 				printf("Opcao Invalida! Tente de novo!\n\n\n\n\n\n\n");
 				system("pause");
 				break;					
-		}
+			}
 	
 								//Fim da Selecao do Menu
 
-	}
+		}
 	
 								//Fim da Funcao de Repeticao (Laco de Repeticao)
+	}
 	
+	else
+		printf("\tSenha Invalida!\n\n\n\n\n\n");
 }
 								//Fim do Menu(codigo principal)
